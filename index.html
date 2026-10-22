@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shahalam Laskar | Portfolio</title>
+<meta name="description" content="Personal portfolio of Shahalam Laskar. Get in touch by phone, email or Instagram.">
+<meta name="theme-color" content="#07070c">
+<style>
+:root{
+  --bg:#07070c; --bg2:#0d0d16; --card:#11111c; --text:#e8e8f2; --muted:#8c8ca6;
+  --neon:#00f0ff; --neon2:#b026ff; --line:rgba(255,255,255,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1050px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,7,12,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-weight:800;letter-spacing:2px;color:var(--neon);text-shadow:0 0 12px rgba(0,240,255,.6)}
+nav ul{display:flex;gap:22px;list-style:none;font-size:14px}
+nav ul a{color:var(--muted);transition:.25s}
+nav ul a:hover{color:var(--neon);text-shadow:0 0 10px var(--neon)}
+@media(max-width:560px){nav ul{gap:14px;font-size:13px}.logo{font-size:14px}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative;
+  background:radial-gradient(circle at 75% 40%,rgba(176,38,255,.18),transparent 45%),radial-gradient(circle at 20% 80%,rgba(0,240,255,.12),transparent 40%)}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+.tag{color:var(--neon);font-size:13px;letter-spacing:4px;text-transform:uppercase}
+h1{font-size:clamp(38px,7vw,70px);line-height:1.05;margin:14px 0;font-weight:800}
+h1 span{color:var(--neon);text-shadow:0 0 18px rgba(0,240,255,.7),0 0 40px rgba(0,240,255,.35)}
+.typed{font-size:clamp(16px,2.6vw,22px);color:var(--muted);min-height:34px}
+.typed b{color:var(--neon2);text-shadow:0 0 10px rgba(176,38,255,.7);font-weight:600}
+.cursor{display:inline-block;width:2px;height:1em;background:var(--neon);margin-left:3px;vertical-align:middle;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p.lead{margin:18px 0 28px;color:var(--muted);max-width:480px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:12px 26px;border-radius:50px;font-weight:600;font-size:15px;border:1px solid var(--neon);color:var(--neon);transition:.3s}
+.btn:hover{background:var(--neon);color:#000;box-shadow:0 0 25px var(--neon)}
+.btn.fill{background:var(--neon);color:#000;box-shadow:0 0 18px rgba(0,240,255,.5)}
+.btn.fill:hover{box-shadow:0 0 35px var(--neon)}
+.sil{display:flex;justify-content:center}
+.sil svg{width:min(320px,80%);filter:drop-shadow(0 0 22px rgba(0,240,255,.55)) drop-shadow(0 0 50px rgba(176,38,255,.35));animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr;text-align:center}.hero p.lead{margin-left:auto;margin-right:auto}.btns{justify-content:center}.sil{order:-1}.sil svg{width:min(220px,60%)}}
+
+/* SECTIONS */
+section{padding:90px 0}
+.title{font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:8px}
+.title span{color:var(--neon);text-shadow:0 0 14px rgba(0,240,255,.6)}
+.sub{color:var(--muted);margin-bottom:40px}
+.alt{background:var(--bg2)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about p{color:var(--muted);margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 10px;text-align:center}
+.stat h3{color:var(--neon);font-size:26px;text-shadow:0 0 12px rgba(0,240,255,.5)}
+.stat small{color:var(--muted)}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.3s}
+.card:hover{border-color:var(--neon);box-shadow:0 0 28px rgba(0,240,255,.18);transform:translateY(-4px)}
+.card .ic{font-size:28px;margin-bottom:12px}
+.card h3{margin-bottom:6px}
+.card p{color:var(--muted);font-size:15px}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.c{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:.3s}
+.c:hover{border-color:var(--neon2);box-shadow:0 0 28px rgba(176,38,255,.25);transform:translateY(-4px)}
+.c small{color:var(--muted);display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:2px;font-size:11px}
+.c strong{word-break:break-all;color:var(--neon)}
+footer{text-align:center;padding:30px 20px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+
+.req{margin-top:30px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;gap:14px}
+.req h3{font-size:20px}
+.req h3 span{color:var(--neon);text-shadow:0 0 12px rgba(0,240,255,.5)}
+.req input,.req select,.req textarea{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:13px 14px;font-family:inherit;font-size:15px;outline:none;transition:.25s}
+.req input:focus,.req select:focus,.req textarea:focus{border-color:var(--neon);box-shadow:0 0 14px rgba(0,240,255,.25)}
+.req textarea{resize:vertical}
+button.btn{background:none;font-family:inherit;cursor:pointer}
+.reveal{opacity:0;transform:translateY(26px);transition:.8s}
+.reveal.show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#home" class="logo">SHAHALAM</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <div class="tag">Personal Portfolio</div>
+      <h1>Hi, I'm <span>Shahalam Laskar</span></h1>
+      <div class="typed"><span id="typed"></span><span class="cursor"></span></div>
+      <p class="lead">I organise and manage events, and I build custom Android ROMs and app mods. Creative, hands-on and detail-driven.</p>
+      <div class="btns">
+        <a class="btn fill" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="sil">
+      <svg viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" aria-label="Silhouette">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#14142a"/>
+            <stop offset="1" stop-color="#05050a"/>
+          </linearGradient>
+          <linearGradient id="s" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#00f0ff"/>
+            <stop offset="1" stop-color="#b026ff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="150" cy="110" r="58" fill="url(#g)" stroke="url(#s)" stroke-width="3"/>
+        <path d="M30 360 C30 250 90 205 150 205 C210 205 270 250 270 360 Z" fill="url(#g)" stroke="url(#s)" stroke-width="3"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="alt">
+  <div class="wrap about reveal">
+    <div>
+      <h2 class="title">About <span>Me</span></h2>
+      <p>I'm Shahalam Laskar. I organise and manage events from the first idea to the final day, and I spend my free time deep in the Android world with custom ROMs and app modding.</p>
+      <p>Whether it's a stage, a crowd or a codebase, I like making things run smoothly and look sharp. This site was made with vibe coding.</p>
+      <p>I care about clean execution, clear communication and finishing what I start.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><h3 style="font-size:20px">Events</h3><small>Organise &amp; manage</small></div>
+      <div class="stat"><h3 style="font-size:20px">ROMs</h3><small>Custom Android</small></div>
+      <div class="stat"><h3 style="font-size:20px">Mods</h3><small>App modding</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap reveal">
+    <h2 class="title">What I <span>Do</span></h2>
+    <p class="sub">A few things I bring to the table.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">&#127881;</div><h3>Event Organising</h3><p>Planning and creating memorable events from concept to execution.</p></div>
+      <div class="card"><div class="ic">&#128203;</div><h3>Event Management</h3><p>Handling teams, schedules and logistics so everything runs on time.</p></div>
+      <div class="card"><div class="ic">&#128241;</div><h3>Android ROMs</h3><p>Custom ROM building and tweaking for better performance and features.</p></div>
+      <div class="card"><div class="ic">&#128295;</div><h3>App Modding</h3><p>Modifying apps to unlock new features and a cleaner experience.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="alt">
+  <div class="wrap reveal">
+    <h2 class="title">My <span>Work</span></h2>
+    <p class="sub">Selected projects. More coming soon.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">&#127881;</div><h3>Events</h3><p>Events organised and managed. Details and highlights coming soon.</p></div>
+      <div class="card"><div class="ic">&#128241;</div><h3>Android ROMs</h3><p>Custom ROM projects and builds. Details coming soon.</p></div>
+      <div class="card"><div class="ic">&#128295;</div><h3>App Mods</h3><p>Modded apps and tweaks. Details coming soon.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap reveal">
+    <h2 class="title">Let's <span>Connect</span></h2>
+    <p class="sub">Reach out any time. I'd love to hear from you.</p>
+    <div class="contact">
+      <a class="c" href="tel:+919101318482"><small>Phone</small><strong>+91 91013 18482</strong></a>
+      <a class="c" href="https://wa.me/919101318482" target="_blank" rel="noopener"><small>WhatsApp</small><strong>Message me</strong></a>
+      <a class="c" href="mailto:shahalamlaskar.official@gmail.com"><small>Email</small><strong>shahalamlaskar.official@gmail.com</strong></a>
+      <a class="c" href="https://instagram.com/shahalam_laskarr" target="_blank" rel="noopener"><small>Instagram</small><strong>@shahalam_laskarr</strong></a>
+    </div>
+
+    <form class="req" id="req">
+      <h3>Send Your <span>Requirements</span></h3>
+      <input id="f_name" type="text" placeholder="Your name" required>
+      <input id="f_contact" type="text" placeholder="Your phone or email (optional)">
+      <select id="f_srv">
+        <option>Event Organising</option>
+        <option>Event Management</option>
+        <option>Android ROM</option>
+        <option>App Modding</option>
+        <option>Something else</option>
+      </select>
+      <textarea id="f_msg" rows="4" placeholder="Tell me what you need (date, place, budget, details)" required></textarea>
+      <div class="btns">
+        <button type="submit" class="btn fill">Send on WhatsApp</button>
+        <button type="button" class="btn" id="f_mail">Send by Email</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>&copy; <span id="yr"></span> Shahalam Laskar. All rights reserved.<br>Made with vibe coding</footer>
+
+<script>
+const words=[["an","Event Organiser"],["an","Event Manager"],["an","Android Modder"],["a","Vibe Coder"]];
+let w=0,i=0,del=false;
+const el=document.getElementById("typed");
+function type(){
+  const art=words[w][0], word=words[w][1];
+  el.innerHTML="I'm "+art+" <b>"+word.substring(0,i)+"</b>";
+  if(!del&&i<word.length){i++;setTimeout(type,110)}
+  else if(!del){del=true;setTimeout(type,1300)}
+  else if(i>0){i--;setTimeout(type,60)}
+  else{del=false;w=(w+1)%words.length;setTimeout(type,300)}
+}
+type();
+document.getElementById("yr").textContent=new Date().getFullYear();
+const form=document.getElementById("req");
+function buildMsg(){
+  const n=document.getElementById("f_name").value.trim();
+  const c=document.getElementById("f_contact").value.trim();
+  const s=document.getElementById("f_srv").value;
+  const m=document.getElementById("f_msg").value.trim();
+  return "Hi Shahalam,\n\nName: "+n+(c?"\nContact: "+c:"")+"\nService: "+s+"\n\nRequirements:\n"+m;
+}
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  window.open("https://wa.me/919101318482?text="+encodeURIComponent(buildMsg()),"_blank");
+});
+document.getElementById("f_mail").addEventListener("click",function(){
+  if(!form.reportValidity())return;
+  const s=document.getElementById("f_srv").value;
+  window.location.href="mailto:shahalamlaskar.official@gmail.com?subject="+encodeURIComponent("Enquiry: "+s)+"&body="+encodeURIComponent(buildMsg());
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.15});
+document.querySelectorAll(".reveal").forEach(n=>io.observe(n));
+</script>
+</body>
+</html>
